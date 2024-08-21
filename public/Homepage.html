@@ -1,0 +1,182 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cake</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <!-- <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.rtl.min.css" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/Homepage.css" />
+  </head>
+  <body>
+    <div class="banner">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand" href="#">Cakee</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#category">Category</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ourDetails">OurDetails</a>
+            </li>
+          </ul>
+        </div>
+        <div class="d-flex" id="splNav">
+          <button id="loginBtn" type="submit">Login</button>
+          <a class="nav-link cart" href="http://localhost:5000/addtocart"><i class="fa-solid fa-cart-shopping"></i> <label class="cartItemLength px-1"> 0 </label></a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container" id="Form">
+      <div class="cancelBtn">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <form action="" class="loginForm">
+        <div class="d-flex flex-column mx-auto">
+          <legend class="text-center mt-3">Login</legend>
+          <div class="form-group col-12">
+            <label for="loginEmail" class="col-3 my-1">Email</label>
+            <input type="text" name="LoginEmail" id="loginEmail" class="form-control" />
+          </div>
+          <div class="form-group col-12">
+            <label for="loginPassword" class="col-3 my-1">password</label>
+            <input type="password" name="LoginPassword" id="loginPassword" class="form-control" />
+          </div>
+          <div class="form-group col-10 mx-auto mt-4">
+            <button type="submit" id="LoginSubmit" class="btn btn-primary mt-4 w-100 mb-2">Submit</button>
+            <span>Do you want to account</span><button type="button" id="signin" class="mx-2">Register now</button>
+          </div>
+        </div>
+      </form>
+      <form action="" class="registerForm">
+        <div class="d-flex flex-column mx-auto">
+          <legend class="text-center mt-3">Register</legend>
+          <div class="form-group col-12">
+            <label for="userEmail" class="col-3 my-1">Email</label>
+            <input type="text" name="UserEmail" id="userEmail" class="form-control" />
+          </div>
+          <div class="form-group col-12">
+            <label for="userPassword" class="col-3 my-1">password</label>
+            <input type="password" name="UserPassword" id="userPassword" class="form-control" />
+          </div>
+          <div class="form-group col-12">
+            <label for="confirmUserPassword" class="col-3 my-1"> Confirm password</label>
+            <input type="password" name="ConfirmUserPassword" id="confirmUserPassword" class="form-control" />
+          </div>
+          <div class="form-group col-10 mx-auto mt-2">
+            <button type="submit" id="RegisterSubmit" class="btn btn-primary mt-4 w-100 mb-2">Submit</button>
+            <span>Already I have account</span><button type="button" id="signup" class="mx-2">Login now</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container-fluid">
+      <div class="categoryTitle text-center my-5" id="category">Categories</div>
+      <div class="d-flex flex-wrap justify-content-center categoryBoxSection"></div>
+    </div>
+    <div class="container">
+      <div class="aboutTitle text-center my-5" id="about">About</div>
+      <div class="row aboutSection">
+        <div class="col-lg-5 col-10 p-5"></div>
+        <div class="col-lg-7 px-5 col-10 mx-auto aboutPara">
+          <ul>
+            <li>Your go-to spot for a delicious range of cakes, breads, and cupcakes.</li>
+            <li>Delivering tasty, high-quality baked goods straight to your door.</li>
+            <li>We use only the freshest ingredients to make sure every bite is full of flavor.</li>
+            <li>Every treat is freshly made, so you get the best taste and quality with every delivery.</li>
+            <li>We offer options like same-day service and scheduled deliveries for special occasions to ensure your treats arrive fresh and on time.</li>
+            <li>We source ingredients locally and use recyclable packaging to support the environment..</li>
+            <li>Our team is committed to excellence and is always ready to help with any questions or concerns.</li>
+            <li>Discover your new favorite treats today on this tasty journey!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="contactTitle text-center my-5" id="ourDetails">Our Details</div>
+    <div class="container-fluid contactSection">
+      <div id="personal_details" class="row">
+        <div class="col-md-4 col-12">
+          <h3 class="mx-4 mt-3">Address:</h3>
+          <div class="text-center mx-4 mt-4">
+            <h6 class="text-end">NO:6</h6>
+            <h6 class="text-end">Gandhi Street</h6>
+            <h6 class="text-end">Aruppukkotai - 626101</h6>
+            <h6 class="text-end">Virudhunagar, TamilNadu, India</h6>
+          </div>
+        </div>
+        <div class="col-md-4 col-12">
+          <h3 class="mx-4 mt-3">Contact:</h3>
+          <div class="text-center mx-4 mt-4">
+            <h6 class="text-end">Phone: 93617 81873 , 84895 02811</h6>
+            <h6 class="text-end">Email: bakerycakee@gmail.com</h6>
+          </div>
+        </div>
+        <div class="col-md-4 col-12">
+          <h3 class="mx-4 mt-3">Social Media:</h3>
+          <div class="mx-4 mt-4">
+            <ul class="list-group list-group-horizontal" id="logo">
+              <li class="ms-3">
+                <a href="#"> <i class="fa-brands fa-youtube"></i></a>
+              </li>
+              <li class="mx-3">
+                <a href="#"> <i class="fa-brands fa-facebook"></i> </a>
+              </li>
+              <li class="mx-3">
+                <a href="#"> <i class="fa-brands fa-instagram"></i> </a>
+              </li>
+              <li class="mx-3">
+                <a href="#"> <i class="fa-brands fa-x-twitter"></i> </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div id="other_details" class="row px-4">
+        <div class="col-md-2 col-6">
+          <h5 class="text-end">About</h5>
+          <ul id="about_list" class="my-3">
+            <li class="text-end my-1"><a href="#">About us</a></li>
+            <li class="text-end my-1"><a href="#">Blog</a></li>
+            <li class="text-end my-1"><a href="#">Contect us</a></li>
+            <li class="text-end my-1"><a href="#">Our's History</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-6">
+          <h5 class="text-end">Help</h5>
+          <ul id="help_list" class="my-3">
+            <li class="text-end my-1"><a href="#">Customer Care</a></li>
+            <li class="text-end my-1"><a href="#">FAQ</a></li>
+            <li class="text-end my-1"><a href="#">Payments</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-6">
+          <h5 class="text-end">Legal</h5>
+          <ul id="legal_list" class="my-3">
+            <li class="text-end my-1"><a href="#">Privacy Policy</a></li>
+            <li class="text-end my-1"><a href="#">Terms and condition</a></li>
+            <li class="text-end my-1"><a href="#">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script> -->
+  <script src="./js/script.js"></script>
+</html>

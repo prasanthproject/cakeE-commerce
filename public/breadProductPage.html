@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <!-- <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.rtl.min.css" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/css/cakeProductpage.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light">
+      <a class="navbar-brand" href="#">Cakee</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:5000/">Home</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-center my-5">
+        <div class="col-lg-6 col-12" id="productImage">
+          <div class="mx-auto image"></div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary col-md-5 col-6 mx-2">Add to Cart</button>
+            <button type="submit" class="btn btn-success col-md-5 col-6 mx-2">Place Order</button>
+          </div>
+        </div>
+        <div class="col-lg-6 col-12 ps-5 pt-5" id="productDetail">
+          <div class="d-flex flex-column flex-wrap align-items-end justify-content-end">
+            <p class="" id="productName"></p>
+            <p class="" id="productPrice"></p>
+
+            <div>
+              <p id="DescriptionTitle">Description:</p>
+              <p id="productDescription"></p>
+            </div>
+            <div>
+              <p id="RecipeTitle">Recipe:</p>
+              <ul id="productRecipe"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const fetchData = async () => {
+      const BreadItemId = window.location.pathname.split("/").pop();
+      console.log(BreadItemId);
+      const responce = await fetch(`/Breads/${BreadItemId}`);
+      if (!responce.ok) {
+      }
+      const data = await responce.json();
+      return data;
+    };
+    async function init() {
+      const BreadItem = await fetchData();
+      console.log(BreadItem);
+      showProductItem(BreadItem);
+    }
+    const showProductItem = (BreadItem) => {
+      document.querySelector(".image").innerHTML = ` <img src="${BreadItem.img}" alt="${BreadItem.name}">`;
+      document.getElementById("productName").textContent = `${BreadItem.name}`;
+      document.getElementById("productPrice").textContent = `Price: ₹${BreadItem.price}`;
+      document.getElementById("productDescription").textContent = `${BreadItem.description}`;
+      const receipeLines = BreadItem.receipe.split(".");
+      receipeLines.forEach((line) => {
+        if (line.trim()) {
+          document.getElementById("productRecipe").innerHTML += `<li class="receipeLine my-2"> ${line.trim()}</li>`;
+        }
+      });
+    };
+    document.addEventListener("DOMContentLoaded", init);
+  </script>
+</html>

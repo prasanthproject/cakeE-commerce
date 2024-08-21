@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <!-- <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.rtl.min.css" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/Favorites.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-light">
+      <a class="navbar-brand" href="#">Cakee</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:5000/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link cart" href="http://localhost:5000/addtocart"><i class="fa-solid fa-cart-shopping"></i> <label class="cartItemLength px-1"> 0 </label></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid px-4">
+       <div class="d-flex justify-content-end mb-4 px-3">
+            <button class="btn text-dark w-10 me-auto" id="back"> <i class="fa-solid fa-angles-left"></i> Back</button>
+          </div>
+      <div class="row">
+        <div class="col-lg-12 col-11 mx-auto " id="favDetailSection">
+          <div class="favDetailContainer d-flex justify-content-end mx-3">
+            <p class="">Total <i class="fa-solid fa-heart"></i> <span class="favlength me-4"></span></p>
+          </div>
+        </div>
+        <div class="col-lg-12" id="favSection">
+          <p class="favTitle pe-2">Favorites List</p>
+          <div class="favContainer d-flex flex-wrap">
+            <!-- <div class="favProduct mx-2 mb-3">
+              <div class="image">
+                <img src="./Img/z1.jpg" alt="" />
+              </div>
+              <div class="productDetail">
+                <div class="Name">Name</div>
+                <div class="Price">856</div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="./js/Favorites.js"></script>
+</html>

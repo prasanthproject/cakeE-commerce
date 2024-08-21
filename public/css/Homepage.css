@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 1500px;
+}
+
+.banner {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("https://static.vecteezy.com/system/resources/previews/035/720/009/non_2x/ai-generated-a-cake-topped-with-fruits-and-berries-free-photo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navBar {
+  position: relative;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.05);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  z-index: 100;
+  color: #fff !important;
+  transition: all 0.5s ease;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.165);
+}
+.navBar.scroll {
+  background-color: #fff;
+}
+.navBar .navbar-brand {
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 7rem;
+  color: #ff006e !important;
+}
+.navbar-toggler {
+  margin-right: 1rem;
+  margin-bottom: 5px;
+  background-color: #fff;
+}
+#navbarNav ul {
+  margin: 0 auto;
+}
+.navBar ul li {
+  margin: 0 10px;
+}
+.navBar ul li a {
+  color: #fff !important;
+}
+.navBar ul li:hover a {
+  color: #ff006e !important;
+}
+
+.navBar.scroll ul li a {
+  color: #0d6efd !important;
+}
+.navBar.scroll ul li:hover a {
+  color: #ff006e !important;
+}
+.navBar #loginBtn {
+  background-color: transparent;
+  color: #ff006e;
+  border: #fff 2px solid;
+  border-radius: 3px;
+  padding: 2px 25px;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+.navBar.scroll #loginBtn {
+  border: #ff006e 2px solid;
+}
+.cart {
+  position: relative;
+  margin-right: 5rem;
+  font-size: 19px;
+  color: #fff;
+}
+.cart label {
+  position: absolute;
+  top: -5px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Rubik", sans-serif;
+}
+.navBar.scroll .cart i {
+  color: #0d6efd !important;
+}
+.navBar.scroll .cart label {
+  color: #111;
+}
+
+@media only screen and (max-width: 768px) {
+  .navBar .navbar-brand {
+    margin-left: 2rem;
+  }
+  .navBar.scroll ul {
+    background-color: #fff;
+  }
+  .navBar ul li a {
+    color: #0d6efd !important;
+  }
+  #splNav {
+    position: absolute;
+    width: 170px;
+    right: 5rem;
+    top: 10px;
+    display: flex;
+  }
+  .navBar ul {
+    margin-top: -2px !important;
+    padding-left: 2rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  #splNav {
+    position: absolute;
+    right: 4rem;
+  }
+}
+
+#category,#about,#ourDetails {
+  margin: 3rem 0;
+  scroll-margin-top:70px;
+}
+.categoryTitle,
+.contactTitle,
+.aboutTitle {
+  font-size: 25px;
+  font-weight: 700;
+  margin: 2rem 0;
+  color: #0d6efd;
+}
+.categoryBox {
+  width: 250px;
+  height: 280px;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  margin-top: 2rem;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.categoryBox:hover {
+  transform: translateY(10px);
+}
+.categoryBox img {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  object-fit: cover;
+  height: 100%;
+}
+
+.categoryBox .categoryDetails .menuTitle {
+  position: absolute;
+  right: 10px;
+  border-radius: 2px;
+  font-size: 18px;
+  margin: 1rem 0;
+  background-color: #fff;
+  color: #ff006e;
+  font-family: "Rubik", sans-serif;
+
+  font-weight: 500;
+  padding: 0 5px;
+}
+.categoryBox .menuDescription {
+  z-index: 1;
+  position: absolute;
+  top: -100%;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 3rem;
+  text-align: justify;
+}
+.categoryBox:hover .menuDescription {
+  top: 0;
+}
+.categoryBox:hover img {
+  backdrop-filter: blur(5px);
+}
+
+.categoryBox button {
+  position: absolute;
+  bottom: 10px;
+  width: 70%;
+  border-radius: 5px;
+  padding: 5px 20px;
+  background-color: lightpink;
+  color: #111;
+  border: 2px solid pink;
+  outline: none;
+  margin: 0 10%;
+  display: none;
+}
+
+#Form {
+  position: fixed;
+  z-index: 100;
+  top: -50%;
+  left: 50%;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.165);
+  background-color: #fff;
+  max-width: 380px;
+  min-height: 400px;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  transition: visibility 0.3s ease;
+}
+#Form.active {
+  top: 50%;
+}
+#Form .cancelBtn {
+  background-color: #111;
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  z-index: 3;
+  right: 10px;
+  font-size: 10px;
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
+#Form form {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+#Form .loginForm,
+#Form .registerForm {
+  padding: 5px 10px;
+}
+#Form .form-control {
+  box-shadow: none;
+  border: blue 1px solid;
+}
+#Form #signin,
+#signup {
+  border: none;
+  background-color: #fff;
+  color: blue;
+}
+
+.aboutSection .aboutPara ul li {
+  text-align: justify;
+  margin-top: 10px;
+  list-style: none;
+  font-size: 17px;
+  font-family: "Rubik", sans-serif;
+}
+.aboutSection .aboutPara ul li::before {
+  content: "\f1fd";
+  font-family: "Font Awesome 6 Free";
+  color: #ff006e;
+  font-size: 15px;
+  font-weight: 900; /* Ensures the solid style is applied */
+  margin-right: 10px;
+
+}
+
+.contactSection {
+  background-color: #ff006e;
+  padding: 1rem;
+  position: absolute;
+  left: 0;
+  color: #fff;
+}
+.contactSection h3,
+h5 {
+  font-family: "Bree Serif", serif;
+}
+.contactSection h6 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+}
+.contactSection ul li {
+  list-style: none;
+}
+
+.contactSection #logo i {
+  font-size: 25px;
+}
+.contactSection a {
+  color: #fff;
+  text-decoration: none;
+}

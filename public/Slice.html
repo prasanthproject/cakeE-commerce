@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.rtl.min.css" /> -->
+    <link rel="stylesheet" href="./css/Cake.css" />
+  </head>
+  <style>
+    #filterContent .typeFilter {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+      padding-bottom: 0.5rem; 
+    }
+    #filterContent .typeFilter .typeFilterTitle {
+      font-size: 16px;
+      font-weight: 600;
+      font-family: "Rubik", sans-serif;
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light">
+      <a class="navbar-brand" href="#">Cakee</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:5000/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link cart" href="http://localhost:5000/addtocart">Cart <i class="fa-solid fa-cart-shopping"></i> <label class="cartItemLength"> 0 </label></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:5000/favorites">Favorites</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="http://localhost:5000/Cake">Cakes</a></li>
+              <li><a class="dropdown-item" href="http://localhost:5000/Bread">Breads</a></li>
+              <li><a class="dropdown-item" href="http://localhost:5000/Cupcake">Cupcakes</a></li>
+              <li><a class="dropdown-item active" href="http://localhost:5000/Slice">Cake Slices</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <button id="loginBtn" type="submit">Login</button>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="d-flex justify-content-around" id="content">
+        <!--  *******************************    FILTER CONTENT    ******************************* -->
+
+        <div class="col-lg-2 px-2 my-2" id="filterContent">
+          <p class="filterTitle pt-3">Filter</p>
+          <div class="priceFilter my-4">
+            <p class="priceFilterTitle">Price Range</p>
+            <div class="filterBox">
+              <input type="range" id="priceRange" step="10" name="" />
+              <span class="priceValue"> </span>
+            </div>
+          </div>
+          <div class="typeFilter my-4">
+            <div class="typeFilterTitle">Type</div>
+            <div class="typeList pe-2"></div>
+          </div>
+          <div class="categoryFilter my-4">
+            <div class="categoryFilterTilte">Category</div>
+            <div class="categoryList pe-2"></div>
+          </div>
+        </div>
+        <!--  *******************************   PRODUCT CONTENT    ******************************* -->
+
+        <div class="col-lg-9 mt-2" style="background-color: #fff" id="productContent">
+          <div class="d-flex flex-column pb-3" id="sortSection">
+            <div class="d-flex me-4 pt-3">
+              <p class="sortTitle">sort by:</p>
+              <p class="sortBtn" id="ascOrder">Price <i class="fa-solid fa-arrow-right-long"></i> Low to High</p>
+              <p class="sortBtn" id="decOrder">Price <i class="fa-solid fa-arrow-right-long"></i> High to Low</p>
+            </div>
+            <div class="me-4 d-flex">
+              <span class="d-flex align-items-center">Out of <span class="mx-2" id="cakeSlicelength"> </span> Cake slice <span class="fw-bold px-2" id="filterlength"> </span> have been filtered</span>
+            </div>
+            <div id="selectedCategories" class="d-flex flex-wrap me-4 mt-1"></div>
+          </div>
+
+          <div id="alert" class="alert alert-primary text-center col-xl-4 col-lg-5 col-md-7 col-sm-8 col-10" role="alert"><i class="fa-solid fa-thumbs-up"></i><span class="me-3"></span></div>
+          <div id="wrongAlert" class="alert alert-danger text-center col-lg-3 col-md-4 col-7" role="alert"><i class="fa-solid fa-thumbs-down"></i><span class="me-3">Already Add to Product</span></div>
+
+          <!--  *************************************     PRODUCTPOST     ********************** -->
+          <p class="zero_length text-center mt-5"></p>
+          <div class="d-flex mb-5 px-4 flex-wrap justify-content-between" id="productSection">
+            <!-- <div class="card productPost mb-4 mx-3">
+              <div class="row">
+                <div class="col-6">
+                  <div class="productImg mx-auto"><img src="./Img/z1.jpg" class="mx-auto" alt="" /></div>
+                </div>
+                <div class="col-6 ps-4 position-relative">
+                  <div class="productDetail">
+                    <p class="title">Cakes Slice</p>
+                    <div class="d-flex justify-content-end">
+                      <p class="kg ms-3">1 piece</p>
+                      <p class="price">₹50</p>
+                    </div>
+                   
+                    <div class="d-flex justify-content-around" id="buttons">
+                      <button type="submit" class="col-5 cartBtn"><i class="fa-solid fa-cart-shopping"></i></button>
+                      <button type="submit" class="col-5 favBtn"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <!--  *******************************    PAGINATION    ******************************* -->
+      <ul class="pagination my-5 justify-content-center pagination-lg" id="pagination"></ul>
+    </div>
+  </body>
+  <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/Slice.js"></script>
+</html>
